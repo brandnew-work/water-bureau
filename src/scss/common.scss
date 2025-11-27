@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@use "setting/utility" as *;
+@use "functions/functions" as *;
+
+@use "base/base";
+@use "base/text";
+@use "base/background";
+@use "base/display";
+@use "base/space";
+@use "base/layout";
+@use "components/header";
+@use "components/header-nav";
+@use "components/footer";
+@use "components/title";
+@use "components/breadcrumbs";
+@use "components/post-item";
+@use "components/btn";
+

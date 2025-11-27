@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+
+.header {
+  position: relative;
+
+  .--header-scroll-standby & {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    transform: translateY(-200%);
+  }
+  .--header-scroll-ready & {
+    transition: transform .5s linear;
+  }
+  .--header-scroll-on & {
+    transform: translateY(0%);
+  }
+}

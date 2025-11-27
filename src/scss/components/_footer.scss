@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+
+.footer {
+  background: $color-gray-dark;
+  color: $color-base;
+  padding: rem(40) $inner_padding_sp;
+
+  @include mq(lg-up) {
+    padding: rem(60) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: rem(30);
+
+    @include mq(lg-up) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__logo-img {
+    max-width: rem(200);
+    height: auto;
+
+    @include mq(lg-up) {
+      max-width: rem(250);
+    }
+  }
+
+  &-nav {
+    margin-bottom: rem(30);
+
+    @include mq(lg-up) {
+      margin-bottom: rem(40);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: rem(20);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      @include mq(lg-up) {
+        gap: rem(30);
+      }
+    }
+
+    &__item {
+      a {
+        color: $color-base;
+        text-decoration: none;
+        font-size: rem(14);
+        transition: opacity 0.3s;
+
+        @include mq(lg-up) {
+          font-size: rem(16);
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    background: $color-gray-lighter;
+    padding: rem(30) $inner_padding_sp;
+    margin: rem(30) (-$inner_padding_sp) 0;
+    border-radius: rem(8);
+
+    @include mq(lg-up) {
+      padding: rem(40) $inner_padding_pc;
+      margin: rem(40) (-$inner_padding_pc) 0;
+    }
+  }
+
+  &__info-title {
+    font-size: rem(18);
+    font-weight: 700;
+    color: $color-gray-dark;
+    margin-bottom: rem(20);
+
+    @include mq(lg-up) {
+      font-size: rem(20);
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(15);
+
+    @include mq(md-up) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(lg-up) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(20);
+    }
+  }
+
+  &__info-item {
+    font-size: rem(13);
+    color: $color-gray-dark;
+
+    @include mq(lg-up) {
+      font-size: rem(14);
+    }
+
+    dt {
+      font-weight: 700;
+      margin-bottom: rem(5);
+    }
+
+    dd {
+      margin: 0;
+      color: $color-gray-light;
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    margin-top: rem(30);
+    padding-top: rem(30);
+    border-top: rem(1) solid rgba(255, 255, 255, 0.2);
+
+    @include mq(lg-up) {
+      margin-top: rem(40);
+      padding-top: rem(40);
+    }
+  }
+
+  &__copy-text {
+    font-size: rem(12);
+    color: rgba(255, 255, 255, 0.7);
+
+    @include mq(lg-up) {
+      font-size: rem(14);
+    }
+  }
+}

@@ -1,0 +1,609 @@
+@charset "UTF-8";
+@use "./setting/utility" as *;
+@use "./functions/functions" as mx;
+@use "common";
+
+/* -------------------------------------------------------------------
+  ヒーローセクション（トップバナー）
+------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  background: $color-theme;
+  color: $color-base;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: rem(60) $inner_padding_sp;
+
+  @include mq(lg-up) {
+    padding: rem(100) $inner_padding_pc;
+    min-height: 80vh;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(28);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: rem(20);
+
+    @include mq(lg-up) {
+      font-size: rem(60);
+      margin-bottom: rem(40);
+    }
+
+    &--large {
+      font-size: rem(40);
+      @include mq(lg-up) {
+        font-size: rem(82);
+      }
+    }
+
+    &--accent {
+      color: $color-accent;
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(20);
+    line-height: 1.6;
+    margin-bottom: rem(30);
+
+    @include mq(lg-up) {
+      font-size: rem(35);
+      margin-bottom: rem(50);
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    align-items: center;
+    margin-top: rem(40);
+
+    @include mq(lg-up) {
+      flex-direction: row;
+      justify-content: center;
+      gap: rem(30);
+    }
+  }
+
+  &__phone {
+    font-size: rem(36);
+    font-weight: 700;
+    color: $color-base;
+    text-decoration: none;
+    display: inline-block;
+    padding: rem(15) rem(30);
+    background: $color-green;
+    border-radius: rem(8);
+    transition: opacity 0.3s;
+
+    @include mq(lg-up) {
+      font-size: rem(50);
+      padding: rem(20) rem(40);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__line-btn {
+    display: inline-block;
+    padding: rem(15) rem(30);
+    background: $color-green;
+    color: $color-base;
+    text-decoration: none;
+    border-radius: rem(8);
+    font-size: rem(18);
+    font-weight: 500;
+    transition: opacity 0.3s;
+
+    @include mq(lg-up) {
+      font-size: rem(26);
+      padding: rem(20) rem(40);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__info {
+    margin-top: rem(30);
+    font-size: rem(14);
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+      margin-top: rem(40);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------
+  サービス紹介セクション
+------------------------------------------------------------------- */
+.service-intro {
+  padding: rem(50) $inner_padding_sp;
+  background: $color-base;
+
+  @include mq(lg-up) {
+    padding: rem(100) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(32);
+    font-weight: 700;
+    color: $color-theme;
+    text-align: center;
+    margin-bottom: rem(40);
+
+    @include mq(lg-up) {
+      font-size: rem(60);
+      margin-bottom: rem(60);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(30);
+
+    @include mq(md-up) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(lg-up) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(40);
+    }
+  }
+
+  &__item {
+    background: $color-base;
+    border: rem(2) solid $color-gray;
+    border-radius: rem(8);
+    padding: rem(30);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    @include mq(lg-up) {
+      &:hover {
+        transform: translateY(rem(-5));
+        box-shadow: 0 rem(10) rem(20) rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__icon {
+    width: rem(80);
+    height: rem(80);
+    margin: 0 auto rem(20);
+    background: $color-theme;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(40);
+    color: $color-base;
+
+    @include mq(lg-up) {
+      width: rem(100);
+      height: rem(100);
+      font-size: rem(50);
+    }
+  }
+
+  &__name {
+    font-size: rem(20);
+    font-weight: 700;
+    color: $color-theme;
+    margin-bottom: rem(15);
+
+    @include mq(lg-up) {
+      font-size: rem(30);
+    }
+  }
+
+  &__desc {
+    font-size: rem(14);
+    line-height: 1.8;
+    color: $color-gray-dark;
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------
+  料金表セクション
+------------------------------------------------------------------- */
+.price-table {
+  padding: rem(50) $inner_padding_sp;
+  background: $color-bg-beige;
+
+  @include mq(lg-up) {
+    padding: rem(100) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(32);
+    font-weight: 700;
+    color: $color-theme;
+    text-align: center;
+    margin-bottom: rem(40);
+
+    @include mq(lg-up) {
+      font-size: rem(60);
+      margin-bottom: rem(60);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(30);
+
+    @include mq(md-up) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(lg-up) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(40);
+    }
+  }
+
+  &__card {
+    background: $color-base;
+    border-radius: rem(8);
+    padding: rem(30);
+    box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.1);
+
+    @include mq(lg-up) {
+      padding: rem(40);
+    }
+  }
+
+  &__category {
+    font-size: rem(24);
+    font-weight: 700;
+    color: $color-theme;
+    text-align: center;
+    margin-bottom: rem(20);
+    padding-bottom: rem(15);
+    border-bottom: rem(2) solid $color-theme;
+
+    @include mq(lg-up) {
+      font-size: rem(32);
+    }
+  }
+
+  &__price {
+    text-align: center;
+    margin-bottom: rem(20);
+  }
+
+  &__price-amount {
+    font-size: rem(36);
+    font-weight: 700;
+    color: $color-red;
+    display: block;
+
+    @include mq(lg-up) {
+      font-size: rem(50);
+    }
+  }
+
+  &__price-note {
+    font-size: rem(14);
+    color: $color-gray-dark;
+    margin-top: rem(5);
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+    }
+  }
+
+  &__services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__service-item {
+    font-size: rem(14);
+    line-height: 1.8;
+    color: $color-gray-dark;
+    padding: rem(8) 0;
+    border-bottom: rem(1) solid $color-gray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------
+  よくある質問セクション
+------------------------------------------------------------------- */
+.faq {
+  padding: rem(50) $inner_padding_sp;
+  background: $color-base;
+
+  @include mq(lg-up) {
+    padding: rem(100) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(32);
+    font-weight: 700;
+    color: $color-theme;
+    text-align: center;
+    margin-bottom: rem(40);
+
+    @include mq(lg-up) {
+      font-size: rem(60);
+      margin-bottom: rem(60);
+    }
+  }
+
+  &__list {
+    max-width: rem(900);
+    margin: 0 auto;
+  }
+
+  &__item {
+    background: $color-bg-lightblue;
+    border-radius: rem(8);
+    margin-bottom: rem(20);
+    overflow: hidden;
+  }
+
+  &__question {
+    font-size: rem(18);
+    font-weight: 700;
+    color: $color-theme;
+    padding: rem(20);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s;
+    position: relative;
+
+    @include mq(lg-up) {
+      font-size: rem(24);
+      padding: rem(25) rem(30);
+
+      &:hover {
+        background: darken($color-bg-lightblue, 5%);
+      }
+    }
+
+    &::after {
+      content: "+";
+      font-size: rem(24);
+      font-weight: 700;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: rem(15);
+    }
+
+    &.--accordion-on::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__answer {
+    font-size: rem(14);
+    line-height: 1.8;
+    color: $color-gray-dark;
+    padding: 0 rem(20) rem(20);
+    display: none;
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+      padding: 0 rem(30) rem(25);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------
+  お客様の声セクション
+------------------------------------------------------------------- */
+.testimonials {
+  padding: rem(50) $inner_padding_sp;
+  background: $color-bg-beige;
+
+  @include mq(lg-up) {
+    padding: rem(100) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(32);
+    font-weight: 700;
+    color: $color-base;
+    text-align: center;
+    margin-bottom: rem(20);
+    background: $color-theme;
+    padding: rem(20);
+    border-radius: rem(8);
+
+    @include mq(lg-up) {
+      font-size: rem(60);
+      padding: rem(30);
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    text-align: center;
+    color: $color-gray-dark;
+    margin-bottom: rem(40);
+
+    @include mq(lg-up) {
+      font-size: rem(18);
+      margin-bottom: rem(60);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(20);
+
+    @include mq(md-up) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq(lg-up) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(30);
+    }
+  }
+
+  &__card {
+    background: $color-bg-beige;
+    border: rem(1) solid $color-gray;
+    border-radius: rem(8);
+    padding: rem(20);
+    box-shadow: 0 rem(2) rem(8) rgba(0, 0, 0, 0.05);
+
+    @include mq(lg-up) {
+      padding: rem(30);
+    }
+  }
+
+  &__author {
+    font-size: rem(16);
+    font-weight: 700;
+    color: $color-gray-dark;
+    margin-bottom: rem(10);
+
+    @include mq(lg-up) {
+      font-size: rem(18);
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    line-height: 1.8;
+    color: $color-gray-dark;
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------
+  CTAセクション（お急ぎの方）
+------------------------------------------------------------------- */
+.cta-section {
+  padding: rem(50) $inner_padding_sp;
+  background: $color-theme;
+  color: $color-base;
+  text-align: center;
+
+  @include mq(lg-up) {
+    padding: rem(80) $inner_padding_pc;
+  }
+
+  &__inner {
+    max-width: $inner;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: rem(28);
+    font-weight: 700;
+    margin-bottom: rem(20);
+
+    @include mq(lg-up) {
+      font-size: rem(50);
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(18);
+    margin-bottom: rem(30);
+    line-height: 1.6;
+
+    @include mq(lg-up) {
+      font-size: rem(24);
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__phone {
+    font-size: rem(32);
+    font-weight: 700;
+    color: $color-base;
+    text-decoration: none;
+    display: inline-block;
+    padding: rem(20) rem(40);
+    background: $color-green;
+    border-radius: rem(8);
+    margin-bottom: rem(20);
+    transition: opacity 0.3s;
+
+    @include mq(lg-up) {
+      font-size: rem(48);
+      padding: rem(25) rem(50);
+      margin-bottom: rem(30);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__note {
+    font-size: rem(14);
+    opacity: 0.9;
+
+    @include mq(lg-up) {
+      font-size: rem(16);
+    }
+  }
+}

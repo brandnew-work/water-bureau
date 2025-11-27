@@ -1,0 +1,57 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: mx.autoClamp(20, 100);
+  align-items: center;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: mx.autoClamp(40, 80);
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+    line-height: 1;
+  }
+  &__prev,
+  &__next {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-top: 1px solid $color-text;
+      border-left: 1px solid $color-text;
+      transform: rotate(-45deg);
+    }
+    &.--disabled {
+      opacity: 0;
+    }
+  }
+  &__next {
+    flex-direction: row-reverse;
+    &::before {
+      transform: rotate(135deg);
+    }
+  }
+  &__pages {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: mx.autoClamp(16, 20);
+
+    .page {
+      opacity: .5;
+    }
+
+    .current {
+      opacity: 1;
+    }
+  }
+}
