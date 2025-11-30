@@ -5,7 +5,4 @@
 ----------------------------------------------------------*/
 
 include 'functions/utility.php';                                // 基本設定の反映
-include 'functions/customPostType.php';                         // カスタム投稿タイプの設定
-// include 'functions/basePlugins/yoastSeo.php';                // yoastSeoの初期設定
-// include 'functions/basePlugins/contactForm7.php';            // CF7の初期設定
 include 'custom_functions.php';                                 // 編集用function

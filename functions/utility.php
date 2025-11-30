@@ -24,27 +24,7 @@ if (!is_admin()) {
   function add_scripts($post)
   {
     wp_css('add_style', '/style.css');
-    if (function_exists('get_field')) {
-      // ページ固有style
-      if (get_field('css_file_name')) {
-        foreach (explode(',', get_field('css_file_name')) as $css) {
-          $style_name = explode('.', $css);
-          wp_css("page_style_{$style_name['0']}", "/css/{$css}");
-        }
-      } else if (is_front_page() && file_exists(TEMPLATE_PATH . '/css/home.css')) {
-        wp_css('page_style_home', '/css/home.css');
-      } else if (is_single() || is_archive() || is_home()) {
-        wp_css('post_style_post', '/css/post.css');
-      } else if (!is_front_page()) {
-        if (file_exists(TEMPLATE_PATH . '/css/sub.css')) {
-          wp_css('page_style_sub', '/css/sub.css');
-        } else if (file_exists(TEMPLATE_PATH . '/css/common.css')) {
-          wp_css('page_style_common', '/css/common.css');
-        }
-      }
-    } else {
-      wp_css('page_style_common', '/css/top.css');
-    }
+    wp_css('page_style_common', '/css/common.css');
     wp_script('bundle_js', '/js/bundle.js', true);
   }
   add_action('wp_enqueue_scripts', 'add_scripts');
@@ -240,7 +220,7 @@ function srcset($file_name, $size_pc = 'large', $size_sp = 'medium', $alt = '', 
 
   // html
   $html  = '<picture>';
-  $html .=  "<source media='(min-width: 768px)' srcset='{$pc['1x']} 1x, {$pc['2x']} 2x'>";
+  $html .=  "<source media='(min-width: 769px)' srcset='{$pc['1x']} 1x, {$pc['2x']} 2x'>";
   $html .=  "<source media='(max-width: 320px)' srcset='{$sp['1x']} 1x, {$sp['2x']} 2x'>";
   $html .= "<img loading='lazy' src='{$sp['1x']}'{$class_insert}{$alt_insert} width='{$pc['width']}' height='{$pc['height']}'>";
   $html .= '</picture>';

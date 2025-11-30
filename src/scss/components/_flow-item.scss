@@ -1,0 +1,114 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+@use "../base/text";
+
+.flow-item {
+  position: relative;
+  counter-increment: flow-num;
+  margin-top: 30px;
+  background-color: $color-bg-lightblue;
+  border-radius: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(88px / 2 * -1);
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    display: block;
+    width: 39px;
+    height: 34px;
+    background-color: $color-accent;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+
+    @include mx.mq(md-up) {
+      top: 50%;
+      left: calc(#{mx.autoClamp(20, 50)} / 2 * -1);
+      transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+      width: mx.autoClamp(19, 39);
+      height: mx.autoClamp(17, 34);
+    }
+  }
+  &:nth-child(2n + 1)::before {
+    @include mx.mq(md-up) {
+      display: none;
+    }
+    @include mx.mq(xl-up) {
+      display: block;
+    }
+  }
+  &:first-child::before {
+    display: none;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 32px;
+    background-color: $color-accent;
+    transform: translateY(-50%);
+    &::before {
+      content: "0" counter(flow-num);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      color: $color-theme;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      width: 25px;
+      height: 100%;
+      display: block;
+      background-color: $color-accent;
+      clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    }
+  }
+
+  &__contents {
+    padding-block: mx.autoClamp(54, 70) mx.autoClamp(20, 54);
+    padding-inline: 25px;
+  }
+
+  &__title {
+    @extend .text-underline;
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+    font-size: mx.autoClamp(23, 30);
+    font-weight: 700;
+    line-height: 1;
+    color: $color-theme;
+  }
+
+  &__figure {
+    margin-top: mx.autoClamp(20, 30);
+    margin-inline: -25px;
+    @include mx.mq(sm-up) {
+      margin-inline: 0;
+    }
+    @include mx.mq(md-up) {
+      aspect-ratio: 354 / 222;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    margin-block: 15px 0;
+    font-size: mx.autoClamp(16, 20);
+    color: $color-theme;
+    line-height: 2;
+  }
+}

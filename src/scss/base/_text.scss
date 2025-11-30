@@ -27,3 +27,11 @@
     text-align: right;
   }
 }
+
+.text-underline {
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-accent, 0) 75%,
+    $color-accent 75%
+  );
+}

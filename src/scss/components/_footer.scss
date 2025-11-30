@@ -3,152 +3,80 @@
 @use "../functions/functions" as mx;
 
 .footer {
-  background: $color-gray-dark;
-  color: $color-base;
-  padding: rem(40) $inner_padding_sp;
-
-  @include mq(lg-up) {
-    padding: rem(60) $inner_padding_pc;
-  }
+  background-color: $color-theme;
+  color: white;
 
   &__inner {
-    max-width: $inner;
-    margin: 0 auto;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 50px;
+    padding-inline: mx.autoClamp(28, 50);
+    @include mx.mq(lg-up) {
+      display: grid;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
-    text-align: center;
-    margin-bottom: rem(30);
-
-    @include mq(lg-up) {
-      margin-bottom: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: mx.autoClamp(6, 16);
+    padding-block: 14px;
+    @include mx.mq(lg-up) {
+      grid-area: 1 / 1 / 3 / 2;
     }
   }
-
-  &__logo-img {
-    max-width: rem(200);
-    height: auto;
-
-    @include mq(lg-up) {
-      max-width: rem(250);
-    }
-  }
-
-  &-nav {
-    margin-bottom: rem(30);
-
-    @include mq(lg-up) {
-      margin-bottom: rem(40);
-    }
-
-    &__list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: rem(20);
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      @include mq(lg-up) {
-        gap: rem(30);
-      }
-    }
-
-    &__item {
-      a {
-        color: $color-base;
-        text-decoration: none;
-        font-size: rem(14);
-        transition: opacity 0.3s;
-
-        @include mq(lg-up) {
-          font-size: rem(16);
-
-          &:hover {
-            opacity: 0.7;
-          }
-        }
-      }
-    }
-  }
-
-  &__info {
-    background: $color-gray-lighter;
-    padding: rem(30) $inner_padding_sp;
-    margin: rem(30) (-$inner_padding_sp) 0;
-    border-radius: rem(8);
-
-    @include mq(lg-up) {
-      padding: rem(40) $inner_padding_pc;
-      margin: rem(40) (-$inner_padding_pc) 0;
-    }
-  }
-
-  &__info-title {
-    font-size: rem(18);
+  &__logo-text {
+    font-size: mx.autoClampSp(20, 20, 35);
     font-weight: 700;
-    color: $color-gray-dark;
-    margin-bottom: rem(20);
-
-    @include mq(lg-up) {
-      font-size: rem(20);
-      margin-bottom: rem(25);
-    }
+    color: white;
+    line-height: 1.2;
+  }
+  &__logo-img {
+    flex-shrink: 0;
+    width: mx.autoClamp(22, 64);
+    height: auto;
   }
 
-  &__info-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: rem(15);
-
-    @include mq(md-up) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include mq(lg-up) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: rem(20);
+  &__nav {
+    margin-top: 40px;
+    @include mx.mq(lg-up) {
+      grid-area: 1 / 2 / 2 / 3;
+      margin-top: 0;
     }
   }
-
-  &__info-item {
-    font-size: rem(13);
-    color: $color-gray-dark;
-
-    @include mq(lg-up) {
-      font-size: rem(14);
+  &__nav-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 50px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    a {
+      color: white;
+      font-size: mx.autoClamp(16, 18);
+      line-height: 1;
     }
 
-    dt {
-      font-weight: 700;
-      margin-bottom: rem(5);
-    }
-
-    dd {
-      margin: 0;
-      color: $color-gray-light;
+    @include mx.mq(sm-up) {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 
   &__copy {
+    margin-top: 50px;
     text-align: center;
-    margin-top: rem(30);
-    padding-top: rem(30);
-    border-top: rem(1) solid rgba(255, 255, 255, 0.2);
-
-    @include mq(lg-up) {
-      margin-top: rem(40);
-      padding-top: rem(40);
+    margin-inline: calc(-1 * #{mx.autoClamp(28, 50)});
+    @include mx.mq(lg-up) {
+      grid-area: 2 / 2 / 3 / 3;
+      margin-top: 32px;
     }
   }
 
   &__copy-text {
-    font-size: rem(12);
-    color: rgba(255, 255, 255, 0.7);
-
-    @include mq(lg-up) {
-      font-size: rem(14);
-    }
+    font-size: 14px;
+    line-height: 1;
   }
 }

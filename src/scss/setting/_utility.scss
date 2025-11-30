@@ -2,31 +2,33 @@
   default colors
 ------------------------------------------------------------------- */
 
-$color-base:        #ffffff;
-$color-theme:       #050E7C; // Figmaメインカラー（青）
-$color-text:        #231815;
-$color-border:      #050E7C;
-$color-sub:         #050E7C;
-$color-accent:      #FFF200; // Figmaアクセントカラー（黄）
-$color-background:  #EBF3F9;
+$color-base: #ffffff;
+$color-theme: #050e7c; // Figmaメインカラー（青）
+$color-text: #231815;
+$color-border: #050e7c;
+$color-sub: #050e7c;
+$color-accent: #fff200; // Figmaアクセントカラー（黄）
+$color-background: #ebf3f9;
 
 // Figma追加カラー
-$color-green:       #00C300; // LINEボタンなど
-$color-red:         #E34C0E; // 価格表示など
-$color-red-dark:    #C32525;
-$color-bg-beige:   #FAF8E8; // お客様の声背景
-$color-bg-lightblue: #CFE9FF; // FAQ背景
-$color-gray:        #D9D9D9; // グレー
-$color-gray-dark:   #252525; // ダークグレー
-$color-gray-light:  #484848; // ライトグレー
-$color-gray-lighter: #E5E5E5; // より薄いグレー
+$color-green: #00c300; // LINEボタンなど
+$color-red: #e34c0e; // 価格表示など
+$color-red-dark: #c32525;
+$color-bg-beige: #faf8e8; // お客様の声背景
+$color-bg-lightblue: #cfe9ff; // FAQ背景
+$color-gray: #d9d9d9; // グレー
+$color-gray-dark: #252525; // ダークグレー
+$color-gray-light: #484848; // ライトグレー
+$color-gray-lighter: #e5e5e5; // より薄いグレー
 
 /* -------------------------------------------------------------------
   default web-font
 ------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap');
-$font-title: "Noto Serif JP", "游明朝", "Yu Mincho", "游明朝体", YuMincho, "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap");
+$font-title: "Noto Serif JP", "游明朝", "Yu Mincho", "游明朝体", YuMincho,
+  "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E",
+  "ＭＳ Ｐ明朝", "MS PMincho", serif;
 $font-web: "Noto Sans JP", "Zen Kaku Gothic New", sans-serif;
 
 /* -------------------------------------------------------------------
@@ -43,12 +45,12 @@ $inner_padding_sp: 15px;
   default spacing
 ------------------------------------------------------------------- */
 
-$high:    100;
-$middle:  50;
-$low:     30;
-$high-sp:    50;
-$middle-sp:  30;
-$low-sp:     30;
+$high: 100;
+$middle: 50;
+$low: 30;
+$high-sp: 50;
+$middle-sp: 30;
+$low-sp: 30;
 
 /* -------------------------------------------------------------------
   hover anitionの適用（～xまで）
@@ -56,13 +58,11 @@ $low-sp:     30;
 
 $animation-width: 600px;
 
-
 /* -------------------------------------------------------------------
   default font-size
 ------------------------------------------------------------------- */
 
 $font-size-base: 15;
-
 
 /* -------------------------------------------------------------------
   breakpoints

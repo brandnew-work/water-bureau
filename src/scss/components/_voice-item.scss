@@ -1,0 +1,85 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+@use "../base/base";
+@use "../base/text";
+
+.voice-item {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: space-between;
+  margin-top: 43px;
+  background-color: white;
+  border-radius: 10px;
+  // max-width: var(--global-voice-item-width);
+  box-shadow: 0 0 12px rgba(black, 0.25);
+  height: calc(100% - 43px);
+
+  @include mx.mq(md-up) {
+    background-color: $color-bg-beige;
+    box-shadow: none;
+  }
+  &__contents {
+    margin-top: -43px;
+  }
+  &__img-wrap {
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+  }
+  &__img {
+    border-radius: 50%;
+    border: 5px solid white;
+    background-color: $color-bg-beige;
+
+    @include mx.mq(md-up) {
+      border: 0;
+      background-color: white;
+    }
+  }
+  &__survey {
+    position: absolute;
+    bottom: 0;
+    right: -12px;
+    height: auto;
+
+    @include mx.mq(md-up) {
+      bottom: -10px;
+      right: -20px;
+      border: 0;
+      background-color: white;
+    }
+  }
+  &__title {
+    margin-top: mx.autoClamp(20, 35);
+    margin-bottom: 0;
+    text-align: center;
+    font-size: mx.autoClamp(24, 32);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+  &__description {
+    margin: 0;
+    margin-top: mx.autoClamp(20, 28);
+    padding-inline: mx.autoClamp(25, 44);
+    font-size: mx.autoClamp(14, 20);
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+  }
+
+  &__more {
+    display: block;
+    margin-top: 12px;
+    padding-block: mx.autoClamp(20, 40) mx.autoClamp(22, 45);
+    margin-inline: mx.autoClamp(25, 30);
+    border-top: 1px solid $color-gray-light;
+    font-size: mx.autoClamp(15, 20);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+
+.gslide-inner-content {
+  padding-inline: 20px;
+}

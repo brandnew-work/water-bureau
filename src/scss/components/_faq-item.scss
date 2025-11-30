@@ -1,0 +1,57 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+@use "../base/base";
+@use "../base/text";
+
+.faq-item {
+  padding-block: mx.autoClamp(20, 24) mx.autoClamp(20, 27);
+  padding-inline: mx.autoClamp(12, 37) mx.autoClamp(10, 50);
+  background-color: $color-bg-lightblue;
+  border-radius: 5px;
+
+  & + & {
+    margin-top: mx.autoClamp(20, 30);
+  }
+
+  &__q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+  }
+  &__q-text {
+    display: flex;
+    column-gap: mx.autoClamp(5, 13);
+    align-items: center;
+    font-size: mx.autoClamp(16, 30);
+    font-weight: 500;
+    line-height: 1.3;
+    color: $color-theme;
+
+    &::before {
+      content: "";
+      display: block;
+      flex-shrink: 0;
+      width: mx.autoClamp(32, 50);
+      height: mx.autoClamp(31, 48);
+      background-image: url("../assets/icon-q.svg");
+      background-size: contain;
+    }
+  }
+  &__q-icon {
+    @extend .plus;
+  }
+
+  &__a {
+    display: none;
+    padding-left: calc(#{mx.autoClamp(32, 50)} + #{mx.autoClamp(5, 13)});
+  }
+
+  &__description {
+    margin: 0;
+    padding-top: 1em;
+    font-size: mx.autoClamp(16, 20);
+    line-height: 2;
+  }
+}

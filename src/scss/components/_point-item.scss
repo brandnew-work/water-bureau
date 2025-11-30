@@ -1,0 +1,110 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+@use "../base/text";
+
+.point-item {
+  counter-increment: point-num;
+  border-radius: 20px;
+  border: 3px solid #2da1ff;
+  background-color: white;
+  overflow: hidden;
+
+  @include mx.mq(lg-up) {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+  }
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  &__contents {
+    padding: 30px 25px 20px;
+
+    @include mx.mq(lg-up) {
+      padding-block: mx.autoClampSp(30, 30, 50) mx.autoClampSp(20, 20, 50);
+      padding-inline: mx.autoClampSp(25, 25, 75) mx.autoClampSp(25, 25, 100);
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    @include mx.mq(lg-up) {
+      display: flex;
+      align-items: center;
+      gap: mx.autoClamp(15, 30);
+    }
+  }
+  &__title-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    aspect-ratio: 45 / 64;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: mx.autoClamp(45, 128);
+    height: auto;
+    padding-top: mx.autoClamp(25, 60);
+    background-image: url("../assets/point-label.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: mx.autoClamp(10, 18);
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    &::after {
+      content: counter(point-num);
+      font-size: mx.autoClamp(18, 74);
+      font-weight: 900;
+    }
+
+    @include mx.mq(lg-up) {
+      position: relative;
+      transform: initial;
+      width: mx.autoClampSp(45, 60, 128);
+      padding-top: mx.autoClampSp(25, 30, 60);
+      font-size: mx.autoClampSp(10, 14, 18);
+      &::after {
+        font-size: mx.autoClampSp(18, 28, 74);
+      }
+    }
+  }
+  &__title-text span {
+    @extend .text-underline;
+    color: $color-theme;
+    font-size: mx.autoClamp(23, 50);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0;
+    @include mx.mq(lg-up) {
+      font-size: mx.autoClampSp(23, 25, 50);
+    }
+  }
+
+  &__figure {
+    aspect-ratio: 330 / 200;
+
+    @include mx.mq(lg-up) {
+      aspect-ratio: initial;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    font-size: mx.autoClamp(16, 21);
+    line-height: 2;
+    @include mx.mq(lg-up) {
+      margin-left: mx.autoClamp(15, 30);
+    }
+  }
+}

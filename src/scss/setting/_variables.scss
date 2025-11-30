@@ -1,0 +1,6 @@
+@use "../functions/functions" as mx;
+
+:root {
+  --global-voice-item-width: #{mx.autoClamp(300, 350)};
+  --global-space-low: #{mx.autoClamp(12, 80)};
+}

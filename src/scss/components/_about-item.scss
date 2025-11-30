@@ -1,0 +1,57 @@
+@use "../setting/utility" as *;
+@use "../functions/functions" as mx;
+
+.about-item {
+  & + & {
+    margin-top: 100px;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    color: $color-theme;
+    font-size: mx.autoClamp(36, 82);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    word-break: keep-all;
+    @include mx.text-outline(white, mx.autoClamp(6, 8));
+  }
+
+  &__figure {
+    width: $inner;
+    max-width: 100%;
+    aspect-ratio: 330 / 250;
+    margin-top: -18px;
+    margin-inline: auto;
+
+    @include mx.mq(md-up) {
+      margin-top: 30px;
+      aspect-ratio: 1080 / 400;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__contents {
+    margin-top: calc(-1 * #{mx.autoClamp(12, 18)});
+    padding-inline: mx.autoClamp(0, 67);
+  }
+
+  &__description {
+    position: relative;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: mx.autoClamp(20, 40) mx.autoClamp(15, 40);
+    border-radius: mx.autoClamp(10, 20);
+    border: 3px solid $color-theme;
+    background-color: white;
+    font-size: mx.autoClamp(16, 24);
+    line-height: 2;
+  }
+}

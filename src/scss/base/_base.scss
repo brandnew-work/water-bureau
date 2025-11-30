@@ -8,11 +8,13 @@ body {
   padding: 0;
 }
 
-html{
+html {
   font-size: 16px;
 }
 
-body{
+body {
+  max-width: 1920px;
+  margin-inline: auto;
   font-size: 15px;
   font-family: $font-web;
   font-weight: 400;
@@ -24,21 +26,21 @@ body{
   }
 }
 
-a{
+a {
   color: $color-text;
   text-decoration: underline;
-  @media screen and (min-width: $animation-width) {
-    transition: .3s linear color;
-    &:hover{
-      color: $color-theme;
-    }
-    img {
-      transition: .3s linear opacity;
-      &:hover {
-        opacity: .5;
-      }
-    }
-  }
+  // @media screen and (min-width: $animation-width) {
+  //   transition: 0.3s linear color;
+  //   &:hover {
+  //     color: $color-theme;
+  //   }
+  //   img {
+  //     transition: 0.3s linear opacity;
+  //     &:hover {
+  //       opacity: 0.5;
+  //     }
+  //   }
+  // }
 }
 
 p {
@@ -67,8 +69,35 @@ b {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
 }
 
-
+.plus {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  width: fit-content;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: mx.autoClamp(19, 30);
+    height: mx.autoClamp(5, 9);
+    background-color: $color-theme;
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: transform 0.3s linear;
+    .--accordion-on & {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+}
