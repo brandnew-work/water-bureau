@@ -24,7 +24,6 @@ const smoothScroll = new SmoothScroll('a[href*="#"]', {
   },
 });
 
-Navigation("header-nav__btn", "body");
 stickyContent("footer", "header");
 
 // FAQアコーディオン

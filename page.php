@@ -186,12 +186,10 @@ $area_map = get_field('map');
 
 <div class="fv --area-str-<?= $area_count; ?>">
   <img class="fv__pc-helper --xl-up" src="<?= get_theme_file_uri('/assets/fv-bg-pc.jpg'); ?>">
-  <div class="js-fade-in">
-    <picture>
-      <source srcset="<?= get_theme_file_uri('/assets/fv-object-pc.png'); ?>" media="(min-width: 1367px)">
-      <img src="<?= get_theme_file_uri('/assets/fv-object-sp.png'); ?>" class="fv__object">
-    </picture>
-  </div>
+  <picture>
+    <source srcset="<?= get_theme_file_uri('/assets/fv-object-pc.png'); ?>" media="(min-width: 1367px)">
+    <img src="<?= get_theme_file_uri('/assets/fv-object-sp.png'); ?>" class="fv__object">
+  </picture>
   <div class="fv__inner">
     <img src="<?= get_theme_file_uri('/assets/cta-common-badge.svg'); ?>" alt="24時間365日対応" class="fv__badge --xl" width="88" height="88">
     <div class="fv__text-t">
@@ -227,17 +225,17 @@ $area_map = get_field('map');
 
   <section class="about">
     <div class="about__inner">
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="about__drop-lt" width="137" height="175">
+      <div class="about__drop-lt">
+        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="js-fade-down" width="137" height="175">
       </div>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="about__drop-rc" width="89" height="172">
+      <div class="about__drop-rc">
+        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="js-fade-down" width="89" height="172">
       </div>
       <div class="about__list">
         <?php foreach ($about_list as $about) get_template_part('components/about-item', '', $about); ?>
       </div>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p3.png') ?>" class="about__drop-lb" width="91" height="162">
+      <div class="about__drop-lb">
+        <img src="<?= get_theme_file_uri('/assets/drop-p3.png') ?>" class="js-fade-down" width="91" height="162">
       </div>
     </div>
   </section>
@@ -272,10 +270,12 @@ $area_map = get_field('map');
 
   <section class="troubles">
     <h2 class="troubles__title">
-      <picture>
-        <source srcset="<?= get_theme_file_uri('/assets/trouble-title-text-pc.svg'); ?>" media="(min-width: 769px)">
-        <img class="troubles__title-text js-scale-up" src="<?= get_theme_file_uri('/assets/trouble-title-text-sp.svg'); ?>" width="242" height="93" />
-      </picture>
+      <div class="js-scale-up">
+        <picture>
+          <source srcset="<?= get_theme_file_uri('/assets/trouble-title-text-pc.svg'); ?>" media="(min-width: 769px)">
+          <img class="troubles__title-text" src="<?= get_theme_file_uri('/assets/trouble-title-text-sp.svg'); ?>" width="242" height="93" />
+        </picture>
+      </div>
     </h2>
     <div class="troubles__inner">
       <div class="troubles__list">
@@ -361,14 +361,14 @@ $area_map = get_field('map');
   <section class="faq">
     <div class="faq__inner">
       <h2 class="faq__title">よくある質問</h2>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="faq__drop-lt" width="163" height="207">
+      <div class="faq__drop-lt">
+        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="js-fade-down" width="163" height="207">
       </div>
       <div class="faq__list">
         <?php foreach ($faqs as $faq) get_template_part('components/faq-item', '', $faq); ?>
       </div>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="faq__drop-rb" width="121" height="237">
+      <div class="faq__drop-rb">
+        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="js-fade-down" width="121" height="237">
       </div>
     </div>
   </section>
@@ -410,14 +410,14 @@ $area_map = get_field('map');
   <section class="addresses">
     <div class="addresses__inner">
       <h2 class="addresses__title">各水道局所在地</h2>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="addresses__drop-lt" width="163" height="207">
+      <div class="addresses__drop-lt">
+        <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="js-fade-down" width="163" height="207">
       </div>
       <div class="addresses__list">
         <?php foreach ($addresses as $address) get_template_part('components/address-item', '', $address); ?>
       </div>
-      <div class="js-fade-in">
-        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="addresses__drop-rb" width="121" height="237">
+      <div class="addresses__drop-rb">
+        <img src="<?= get_theme_file_uri('/assets/drop-p2.png') ?>" class="js-fade-down" width="121" height="237">
       </div>
       <!-- <div class="address-more"><span class="address-more__text">さらに表示<span class="plus"></span></span></div> -->
     </div>
