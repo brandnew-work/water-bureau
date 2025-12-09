@@ -184,7 +184,7 @@ $area_map = get_field('map');
 
 ?>
 
-<div class="fv --area-str-<?= $area_count; ?>">
+<div class="fv js-fade-in --area-str-<?= $area_count; ?>">
   <img class="fv__pc-helper --xl-up" src="<?= get_theme_file_uri('/assets/fv-bg-pc.jpg'); ?>">
   <picture>
     <source srcset="<?= get_theme_file_uri('/assets/fv-object-pc.png'); ?>" media="(min-width: 1367px)">
@@ -223,7 +223,7 @@ $area_map = get_field('map');
 
 <main>
 
-  <section class="about">
+  <section class="about js-fade-in">
     <div class="about__inner">
       <div class="about__drop-lt">
         <img src="<?= get_theme_file_uri('/assets/drop-p1.png') ?>" class="js-fade-down" width="137" height="175">
@@ -240,7 +240,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <div class="cta-p1" style="background-image: url(<?= $area_bg; ?>)">
+  <div class="cta-p1 js-fade-in" style="background-image: url(<?= $area_bg; ?>)">
     <div class="cta-p1__inner">
       <h2 class="cta-p1__title">
         <img src="<?= $area_map; ?>" class="cta-p1__title-map">
@@ -268,7 +268,7 @@ $area_map = get_field('map');
     </div>
   </div>
 
-  <section class="troubles">
+  <section class="troubles js-fade-in">
     <h2 class="troubles__title">
       <div class="js-scale-up">
         <picture>
@@ -284,7 +284,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <section class="points">
+  <section class="points js-fade-in">
     <h2 class="points__title">
       <div class="points__title-imgs">
         <img src="<?= get_theme_file_uri('/assets/points-title-img-1.png'); ?>" class="points__title-img --left js-scale-up" width="120" height="120">
@@ -300,7 +300,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <div class="cta-p2">
+  <div class="cta-p2 js-fade-in">
     <div class="cta-p2__inner">
       <div class="cta-p2__contents">
         <span class="cta-p2__label">見積り・出張・相談　<span class="--has-dotted">無料<span class="--dotted">・・</span>
@@ -325,7 +325,7 @@ $area_map = get_field('map');
     </div>
   </div>
 
-  <section class="voices">
+  <section class="voices js-fade-in">
     <div class="voices__inner">
       <h2 class="voices__title">お客様の声</h2>
       <p class="voices__lead">
@@ -367,7 +367,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <section class="flow">
+  <section class="flow js-fade-in">
     <h2 class="flow__title">
       <span class="flow__title-text">
         <span>ご</span><span>利</span><span>用</span><span>の</span><span>流</span><span>れ</span>
@@ -378,7 +378,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <section class="faq">
+  <section class="faq js-fade-in">
     <div class="faq__inner">
       <h2 class="faq__title">よくある質問</h2>
       <div class="faq__drop-lt">
@@ -393,7 +393,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <section class="maker">
+  <section class="maker js-fade-in">
     <div class="maker__inner">
       <h2 class="maker__title">
         <span>取り扱い</span>
@@ -407,7 +407,7 @@ $area_map = get_field('map');
     </div>
   </section>
 
-  <div class="cta-p3">
+  <div class="cta-p3 js-fade-in">
     <div class="cta-p3__inner">
       <div class="cta-p3__text">
         <span class="cta-p3__text-icon"><?php include 'assets/icon-tel.svg'; ?></span>
@@ -427,7 +427,7 @@ $area_map = get_field('map');
     </div>
   </div>
 
-  <section class="addresses">
+  <section class="addresses js-fade-in">
     <div class="addresses__inner">
       <h2 class="addresses__title">各水道局所在地</h2>
       <div class="addresses__drop-lt">

@@ -11,7 +11,7 @@ $img = match ($type) {
   '4' => get_theme_file_uri('/assets/voice-icon-m-2.png'),
 };
 ?>
-<div class="voice-item">
+<div class="voice-item js-fade-up">
   <div class="voice-item__contents">
     <div class="voice-item__img-wrap">
       <img class="voice-item__img" src="<?= $img; ?>" load="lazy" width="243" height="243" />
