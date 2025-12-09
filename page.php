@@ -333,15 +333,35 @@ $area_map = get_field('map');
         水回りの急なトラブルから大規模な修理まで、<br>
         確かな技術と誠実な対応で多くのお客様にご満足いただいています。
       </p>
-      <div id="splide" class="splide voices__carousel js-voices-carousel">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <?php foreach ($voices as $voice): ?>
-              <li class="splide__slide">
-                <?= get_template_part('components/voice-item', '', $voice); ?>
-              </li>
-            <?php endforeach; ?>
-          </ul>
+      <div id="splide" class="voices__carousel-wrap">
+        <div class="splide voices__carousel js-voices-carousel">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <?php foreach ($voices as $voice): ?>
+                <li class="splide__slide">
+                  <?= get_template_part('components/voice-item', '', $voice); ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+        <div class="voices__carousel-arrows">
+          <button type="button" class="voices__carousel-arrow voices__carousel-arrow --prev js-voices-arrow-prev">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <circle cx="60" cy="60" r="60" fill="#ffea01" />
+                <path d="M39 59.5L72.75 40.0144L72.75 78.9856L39 59.5Z" fill="#484848" />
+              </g>
+            </svg>
+          </button>
+          <button type="button" class="voices__carousel-arrow voices__carousel-arrow --next js-voices-arrow-next">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <circle cx="60" cy="60" r="60" fill="#ffea01" />
+                <path d="M39 59.5L72.75 40.0144L72.75 78.9856L39 59.5Z" fill="#484848" />
+              </g>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
