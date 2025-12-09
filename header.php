@@ -1,5 +1,9 @@
 <?php
 $show_analytics = !is_user_logged_in();
+
+$tel = get_info('tel');
+$tel_link = 'tel:' . str_replace('-', '', $tel);
+$line_url = get_info('line');
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -24,17 +28,17 @@ $show_analytics = !is_user_logged_in();
       <span class="header__logo-text">水道局指定工事店受付センター</span>
     </div>
     <div class="header__cta">
-      <div class="header__cta-line">
+      <a href="<?= $line_url ?>" class="header__cta-line">
         <picture>
           <source srcset="<?= get_theme_file_uri('/assets/header-line-cta-pc.png'); ?>" media="(min-width: 1025px)">
           <img class="header__cta-line__img" src="<?= get_theme_file_uri('/assets/header-line-cta-sp.png'); ?>" width="52" height="52" />
         </picture>
-      </div>
-      <div class="header__cta-tel">
+      </a>
+      <a href="<?= $tel_link ?>" class="header__cta-tel">
         <picture>
           <source srcset="<?= get_theme_file_uri('/assets/header-tel-cta-pc.png'); ?>" media="(min-width: 1025px)">
           <img class="header__cta-tel__img" src="<?= get_theme_file_uri('/assets/header-tel-cta-sp.png'); ?>" width="52" height="52" />
         </picture>
-      </div>
+      </a>
     </div>
   </div>

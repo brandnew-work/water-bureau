@@ -3,7 +3,7 @@ $title     = $args['title'] ?? 'タイトル';
 $img       = $args['img'] ?? '/assets/flow-img-01.jpg';
 $desc      = $args['desc'];
 ?>
-<div class="flow-item">
+<div class="flow-item js-fade-up">
   <span class="flow-item__label"></span>
   <div class="flow-item__contents">
     <h3 class="flow-item__title"><span><?= $title; ?></span></h3>
