@@ -95,10 +95,10 @@
 
 .troubles {
   @include mx.mq(md-up) {
-    margin-top: calc(-1 * #{mx.autoClamp(50, 250)});
+    margin-top: calc(-1 * #{mx.autoClamp(50, 310)});
   }
   &__title {
-    padding-block: mx.autoClampSp(105, 130, 270);
+    padding-block: mx.autoClampSp(105, 130, 370);
     background: url(../assets/trouble-title-bg-sp.png) center center no-repeat;
     background-size: cover;
 

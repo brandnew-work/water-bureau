@@ -5,6 +5,8 @@
 @use "sass:math";
 @use "../setting/utility" as *;
 
+$pc-scale-factor: 0.8 !default;
+
 /* -------------------------------------------------------------------
   各種rem計算（font以外）
 ------------------------------------------------------------------- */
@@ -53,8 +55,7 @@
 @function autoClamp($start, $end) {
   $start-num: strip-unit($start);
   $end-num: strip-unit($end);
-  $pc-scale: 0.8;
-  $scaled-end: $end-num * $pc-scale;
+  $scaled-end: $end-num * $pc-scale-factor;
 
   $middle: math.div(($scaled-end - $start-num), 2) + $start-num;
 
@@ -63,16 +64,23 @@
 
 // tabletサイズでデザイン納品された場合
 @function autoClampSp($sp: math.div($tb, 2), $tb: $pc, $pc, $width: 768) {
-  @return clamp(#{$sp}px, vw($tb, $width), #{$pc}px);
+  $pc-num: strip-unit($pc);
+  $scaled-pc: $pc-num * $pc-scale-factor;
+
+  @return clamp(#{$sp}px, vw($tb, $width), #{$scaled-pc}px);
 }
 @mixin autoClampSp($prefix, $sp: math.div($tb, 2), $tb: $pc, $pc, $width: 768) {
-  @if $tb > $pc {
+  $pc-num: strip-unit($pc);
+  $tb-num: strip-unit($tb);
+  $scaled-pc: $pc-num * $pc-scale-factor;
+
+  @if $tb-num > $pc-num {
     #{$prefix}: clamp(#{$sp}px, vw($tb, $width), #{$tb}px);
     @media screen and (min-width: ($width + 0.1px)) {
-      #{$prefix}: #{$pc}px;
+      #{$prefix}: #{$scaled-pc}px;
     }
   } @else {
-    #{$prefix}: clamp(#{$sp}px, vw($tb, $width), #{$pc}px);
+    #{$prefix}: clamp(#{$sp}px, vw($tb, $width), #{$scaled-pc}px);
   }
 }
 
