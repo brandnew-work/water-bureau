@@ -53,10 +53,12 @@
 @function autoClamp($start, $end) {
   $start-num: strip-unit($start);
   $end-num: strip-unit($end);
+  $pc-scale: 0.8;
+  $scaled-end: $end-num * $pc-scale;
 
-  $middle: math.div(($end-num - $start-num), 2) + $start-num;
+  $middle: math.div(($scaled-end - $start-num), 2) + $start-num;
 
-  @return clamp(#{$start-num}px, vw($middle, 768), #{$end-num}px);
+  @return clamp(#{$start-num}px, vw($middle, 768), #{$scaled-end}px);
 }
 
 // tabletサイズでデザイン納品された場合
