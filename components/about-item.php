@@ -3,7 +3,7 @@ $title = $args['title'] ?? 'タイトル';
 $img   = $args['img'] ?? '/assets/about-img-01.jpg';
 $desc  = $args['desc'];
 ?>
-<div class="about-item">
+<div class="about-item js-fade-up">
   <h3 class="about-item__title"><?= $title; ?></h3>
   <figure class="about-item__figure">
     <img class="about-item__img" src="<?= $img; ?>" load="lazy" />

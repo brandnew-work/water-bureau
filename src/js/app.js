@@ -45,8 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     arrows: false,
     pagination: false,
     rewind: true,
-    autoplay: true,
-    interval: 5000,
+    autoplay: false,
     drag: true,
     focus: "center",
     fixedWidth: "var(--global-voice-item-width)",
@@ -57,6 +56,23 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!voicesCarousel) return;
   const voicesSplide = new Splide(voicesCarouselClass, voicesSplideOptions);
   voicesSplide.mount();
+
+  const voicePrev = document.querySelector(".js-voices-arrow-prev");
+  const voiceNext = document.querySelector(".js-voices-arrow-next");
+
+  if (voicePrev) {
+    voicePrev.addEventListener("click", (event) => {
+      event.preventDefault();
+      voicesSplide.go("<");
+    });
+  }
+
+  if (voiceNext) {
+    voiceNext.addEventListener("click", (event) => {
+      event.preventDefault();
+      voicesSplide.go(">");
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {

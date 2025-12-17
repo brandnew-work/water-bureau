@@ -4,7 +4,7 @@ $img   = $args['img'] ?? '/assets/trouble-img-toilet.jpg';
 $price = $args['price'] ?? '';
 $list  = $args['list'];
 ?>
-<div class="trouble-item">
+<div class="trouble-item js-fade-up">
   <h3 class="trouble-item__title"><?= $title; ?></h3>
   <figure class="trouble-item__figure">
     <img class="trouble-item__img" src="<?= $img; ?>" load="lazy" />

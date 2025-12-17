@@ -4,7 +4,7 @@ $img_pc = $args['img_pc'] ?? '/assets/point-img-01-pc.jpg';
 $img_sp = $args['img_sp'] ?? '/assets/point-img-01-sp.jpg';
 $desc   = $args['desc'];
 ?>
-<div class="point-item">
+<div class="point-item js-fade-up">
   <figure class="point-item__figure">
     <picture>
       <source srcset="<?= $img_pc; ?>" media="(min-width: 769px)">
