@@ -179,7 +179,7 @@ $tel_link = 'tel:' . str_replace('-', '', $tel);
 $line_url = get_info('line');
 $area = get_the_title();
 $area_count = mb_strlen($area);
-$area_bg = get_theme_file_uri('/assets/cta-p1-bg-kyoto.jpg');
+$area_bg = get_field('area_bg') ?? get_theme_file_uri('/assets/cta-p1-bg-kyoto.jpg');
 $area_map = get_field('map');
 
 ?>
