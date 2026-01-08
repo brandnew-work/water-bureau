@@ -181,7 +181,7 @@ $area = get_the_title();
 $area_count = mb_strlen($area);
 $area_bg = get_field('area_bg') ?? get_theme_file_uri('/assets/cta-p1-bg-kyoto.jpg');
 $area_map = get_field('map');
-
+$branch_office = get_field('branch_office');
 ?>
 
 <div class="fv js-fade-in --area-str-<?= $area_count; ?>">
@@ -462,6 +462,12 @@ $area_map = get_field('map');
         <th>電話番号</th>
         <td>0120-212-216</td>
       </tr>
+      <?php if ($branch_office): ?>
+        <tr>
+          <th>出張所</th>
+          <td><?= $branch_office; ?></td>
+        </tr>
+      <?php endif; ?>
     </table>
   </section>
 </main>
